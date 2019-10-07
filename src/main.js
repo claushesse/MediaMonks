@@ -7,6 +7,7 @@ const buttonRightContainer = document.querySelector('#right-button-container');
 const buttonRight = document.querySelector('#right-button');
 const message1 = document.querySelector('#message1');
 const message2 = document.querySelector('#message2');
+const initialText = document.querySelector('#initialText');
 const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%", "112%"];
 let currentPosition = 0;
 
@@ -15,13 +16,16 @@ function checkPosition(){
     if (currentPosition <= 0){
         buttonLeftContainer.style.display = "none";
         buttonLeft.style.display = "none";
-        message2.style.display = "none";
-        message1.style.display = "inline-block";
+        message2.classList.add("hidden");
+        message2.classList.remove("visible");
+        message1.classList.remove("hidden");
+        message1.classList.add("visible");
+        initialText.classList.remove("hidden");
     }
     if (currentPosition != 0){
         buttonLeftContainer.style.display = "block";
         buttonLeft.style.display = "inline-block";
-        message1.style.display = 'none';    
+        initialText.classList.add("hidden");
     }
     if(currentPosition != 9){
         buttonRightContainer.style.display = "block";
@@ -32,7 +36,10 @@ function checkPosition(){
         buttonRight.style.display = "none";
     }
     if(currentPosition == 1){
-        message2.style.display = "inline-block";
+        message2.classList.remove("hidden");
+        message2.classList.add("visible");
+        message1.classList.add("hidden");
+        message1.classList.remove("visible");
     }
 }
 
