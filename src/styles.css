@@ -55,19 +55,19 @@ body{
 .hidden { 
     opacity: 0; 
     visibility: hidden;
-    transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
-    -webkit-transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
-    -moz-transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
-    -o-transition: visibility 0.5s ease-in, opacity 0.5s ease-in; 
+    transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
+    -webkit-transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
+    -moz-transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
+    -o-transition: visibility 0.2s ease-in, opacity 0.2s ease-in; 
 }
 
 .visible{
     opacity: 1; 
     visibility: visible;
-    transition: visibility 2s cubic-bezier(0.5, 0.5, 0.5, 0.2), opacity 2s cubic-bezier(0.5, 0.5, 0.5, 0.2);
-    -webkit-transition: visibility 2s cubic-bezier(0.5, 0.5, 0.5, 0.2), opacity 2s cubic-bezier(0.5, 0.5, 0.5, 0.2);
-    -moz-transition: visibility 2s cubic-bezier(0.5, 0.5, 0.5, 0.2), opacity 2s cubic-bezier(0.5, 0.5, 0.5, 0.2);
-    -o-transition: visibility 2s cubic-bezier(0.5, 0.5, 0.5, 0.2), opacity 2s cubic-bezier(0.5, 0.5, 0.5, 0.2);         
+    transition: visibility 1s ease-out, opacity 1s ease-out;
+    -webkit-transition: visibility visibility 1s ease-out, opacity 1s ease-out;
+    -moz-transition: visibility 1s ease-out, opacity 1s ease-out;
+    -o-transition: visibility 1s ease-out, opacity 1s ease-out;         
 }
 
 .message{
@@ -85,8 +85,8 @@ body{
 
 .messageLeft{
     position: absolute;
-    left: 6.5%;
-    top: 42.8%;
+    left: 7%;
+    top: 41.5%;
 }
 
 .ptext{
@@ -171,9 +171,9 @@ body{
     position: absolute;  
     width: 50%;
     padding: 0px;
-    border-left: 3px dotted white;
-    border-top: 3px dotted white;
-    border-bottom: 3px dotted white;
+    border-left: 4px dotted white;
+    border-top: 4px dotted white;
+    border-bottom: 4px dotted white;
     left: 6%;
     bottom: 6%;
 }
@@ -181,7 +181,7 @@ body{
 .pageSelector{
     font-family: KlavikaLight;
     font-size: 2em;
-    border-right: 3px dotted white;
+    border-right: 4px dotted white;
     padding: 1% 7%;
     color: white;
     margin: 0px;
@@ -222,7 +222,7 @@ body{
 @media only screen and (min-width: 1000px){
 
     .message{
-        max-width: 27%;
+        max-width: 50%;
         margin-top: 2%;
         margin-left: 2%;
         display: inline-block;
@@ -237,7 +237,7 @@ body{
     .messageLeft{
         position: absolute;
         left: 3%;
-        top: 38%;
+        top: 37%;
     }
     
     .ptext{
