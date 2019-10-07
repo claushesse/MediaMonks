@@ -14,91 +14,108 @@ const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%
 let currentPosition = 0;
 
 function checkPosition(){
-    //console.log("current position", currentPosition);
-    if (currentPosition <= 0){
-        buttonLeftContainer.style.display = "none";
-        buttonLeft.style.display = "none";
+    /*if (currentPosition = 0){
+        buttonLeftContainer.classList.remove("visible");
+        buttonLeft.classList.add("hidden");
         message2.classList.remove("visible");
         message2.classList.add("hidden");
-        message1.classList.remove("hidden");
-        message1.classList.add("visible");
-        initialText.classList.remove("hidden");
-        initialText.classList.add("visible");
         stepCounter.classList.remove("visible");
         stepCounter.classList.add("hidden");
-    }
-
-    if (currentPosition != 0){
-        buttonLeftContainer.style.display = "block";
-        buttonLeft.style.display = "inline-block";
+        buttonLeft.classList.add("hidden");            
+        buttonLeftContainer.classList.add("hidden");
+        setTimeout(() => { initialText.classList.remove("hidden"); initialText.classList.add("visible"); }, 1000);
+        setTimeout(() => { message1.classList.remove("hidden"); message1.classList.add("visible"); step.innerHTML = "1";}, 1000);
+    }*/
+    if(currentPosition != 0){
         initialText.classList.add("hidden");
         initialText.classList.remove("visible");
+        //console.log(buttonLeftContainer.classList);
+        for(var i = 0; i < buttonLeftContainer.classList.length; i++){
+            var leftButtonClass = buttonLeftContainer.classList[i];
+            if(leftButtonClass == "hidden"){
+                console.log(leftButtonClass);
+                setTimeout(() => { buttonLeftContainer.classList.remove("hidden"); buttonLeftContainer.classList.add("visible");}, 1000);
+            }
+        }
+    }
 
-        if(currentPosition != 9){
-            buttonRightContainer.style.display = "block";
-            buttonRight.style.display = "inline-block";
-        }
-
-        if(currentPosition >= 9){
-            buttonRightContainer.style.display = "none";
-            buttonRight.style.display = "none";
-        }
-        
-        switch(currentPosition){
-            case 1:
-                message1.classList.remove("visible");
-                message1.classList.add("hidden");
-                stepCounter.classList.remove("visible");
-                stepCounter.classList.add("hidden");
-                setTimeout(() => { message2.classList.remove("hidden"); message2.classList.add("visible"); }, 1000);
-                setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); }, 1000);
-                step.innerHTML = "1";
-                break;
-            case 2:
-                message2.classList.remove("visible");
-                message2.classList.add("hidden");
-                message1.classList.remove("visible");
-                message1.classList.add("hidden");
-                stepCounter.classList.remove("visible");
-                stepCounter.classList.add("hidden");
-                setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); }, 1000);
-                step.innerHTML = "2";
-                break;
-            case 3:
-                step.innerHTML = "3";
-                stepCounter.classList.remove("visible");
-                stepCounter.classList.add("hidden");
-                setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); }, 1000);
-                break;
-            case 4:
-                step.innerHTML = "4";
-                break;
-            case 5:
-                step.innerHTML = "5";
-                break;
-            case 6:
-                step.innerHTML = "6";
-                break;    
-            case 7:
-                step.innerHTML = "7";
-                stepCounter.classList.remove("visible");
-                stepCounter.classList.add("hidden");
-                stepCounter.classList.add("visible");
-                break;
-            case 8:
-                step.innerHTML = "8";
-                stepCounter.classList.remove("hidden");
-                stepCounter.classList.add("visible");
-                break;                   
-            case 9:
-                buttonRightContainer.style.display = "none";
-                buttonRight.style.display = "none";
-                stepCounter.classList.remove("visible");
-                stepCounter.classList.add("hidden");
-                break;               
-            default: 
-                console.log("NO SOY EL 1");
-        }
+    if(currentPosition != 9){
+        buttonRightContainer.classList.remove("hidden");
+        buttonRight.classList.remove("hidden");
+        buttonRightContainer.classList.add("visible");
+        buttonRight.classList.add("visible");
+    }
+    
+    switch(currentPosition){
+        case 0:
+            buttonLeftContainer.classList.remove("visible");
+            buttonLeft.classList.add("hidden");
+            message2.classList.remove("visible");
+            message2.classList.add("hidden");
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            buttonLeft.classList.remove("visible"); 
+            buttonLeftContainer.classList.remove("visible"); 
+            buttonLeft.classList.add("hidden");            
+            buttonLeftContainer.classList.add("hidden");
+            setTimeout(() => { initialText.classList.remove("hidden"); initialText.classList.add("visible"); }, 1000);
+            setTimeout(() => { message1.classList.remove("hidden"); message1.classList.add("visible"); step.innerHTML = "1";}, 1000);
+            break;
+        case 1:
+            message1.classList.remove("visible");
+            message1.classList.add("hidden");
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { message2.classList.remove("hidden"); message2.classList.add("visible"); }, 1000);
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "1";}, 1000);
+            break;
+        case 2:
+            message2.classList.remove("visible");
+            message2.classList.add("hidden");
+            message1.classList.remove("visible");
+            message1.classList.add("hidden");
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "2";}, 1000);
+            break;
+        case 3:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "3"; }, 1000);
+            break;
+        case 4:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "4"; }, 1000);
+            break;
+        case 5:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "5"; }, 1000);
+            break;
+        case 6:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "6"; }, 1000);
+            break;
+        case 7:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "7"; }, 1000);
+            break;
+        case 8:
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            setTimeout(() => { stepCounter.classList.remove("hidden"); stepCounter.classList.add("visible"); step.innerHTML = "8"; }, 1000);
+            break;                 
+        case 9:
+            buttonRightContainer.classList.add("hidden");
+            buttonRight.classList.add("hidden");
+            stepCounter.classList.remove("visible");
+            stepCounter.classList.add("hidden");
+            break;               
+        default: 
+            console.log("NO SOY EL 1");
     }
 }
 
