@@ -1,0 +1,342 @@
+@font-face {
+	font-family: "KlavikaBold";
+    font-weight: 400;
+	src: url(font/klavika-bold-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family: "KlavikaLight";
+    font-weight: 400;
+	src: url(font/klavika-light-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family: "KlavikaMedium";
+    font-weight: 400;
+	src: url(font/klavika-medium-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family: "KlavikaRegular";
+    font-weight: 400;
+	src: url(font/klavika-regular-webfont.woff) format('woff');
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+	background-color: #000;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+#background{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(images/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    transition: background-position 1s ease-in-out;
+    -webkit-transition: background-position 1s ease-in-out; /* Safari prior 6.1 */
+    z-index: 0;
+}
+/*
+.button-container{
+    display: inline-block;
+    cursor: pointer;
+    width: 3.5em;
+    height: 3.5em;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+}
+
+.button-container:hover .left-button{
+    border: solid rgb(224, 224, 224);
+    border-width: 4.2px 0 0 4.2px;;
+}
+
+.button-container:hover .right-button{
+    border: solid rgb(224, 224, 224);
+    border-width: 0 4.2px 4.2px 0;
+}
+
+#left-button-container{
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    vertical-align: center;
+    margin-left: 2.5em;
+}
+
+#right-button-container{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    vertical-align: center;
+    margin-right: 3.20em;
+}
+
+.right-button {
+    border: solid white;
+    border-width: 0 4.2px 4.2px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left-button {
+    border: solid white;
+    border-width: 4.2px 0 0 4.2px;
+    display: inline-block;
+    padding: 3px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.message{
+    max-width: 80%;
+    margin: 4em;
+    display: inline-block;
+}
+
+.ptext{
+    line-height: 0.8;
+    margin: 0px;
+}
+
+.text{
+    font-family: KlavikaLight;
+    font-size: 6em; 
+    font-weight: 100;
+    color: rgb(233, 233, 233); 
+    display: inline-block;
+    border-bottom: 2px solid currentColor;
+}
+
+#grid{
+    display: grid;  
+    grid-template-columns: repeat(10, 1fr);   
+    position: absolute;  
+    width: 50%;
+    padding: 0px;
+    border-left: 2px dotted white;
+    border-top: 2px dotted white;
+    border-bottom: 2px dotted white;
+    left: 2.5em;
+    bottom: 2.5em;
+}
+
+.pageSelector{
+    font-family: KlavikaLight;
+    font-size: 2em;
+    border-right: 2px dotted white;
+    padding: 10% 12%;
+    color: white;
+    margin: 0px;
+    text-align: center;
+}
+
+.pageSelector:hover{
+    cursor: pointer;
+    color: rgb(118, 118, 118);
+}
+
+#initialText{
+    position: absolute;
+    font-family: KlavikaLight;
+    font-size: 1.7em;
+    display: inline-block;
+    color: rgb(218, 218, 218);
+    width: 100%; 
+    left: 4%;
+    bottom: 55%;      
+}
+
+#stepCounter{
+    position: absolute;
+    font-family: KlavikaLight;
+    font-size: 1.7em;
+    display: inline-block;
+    color: rgb(218, 218, 218);
+    width: 80%; 
+    left: 4%;
+    bottom: 35%;     
+}
+
+#logo{
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    margin-right: 2em;
+    width: 15%;
+    right: 1%;
+    bottom: 1%;
+}
+
+.svg-logo-mm{
+    fill: white;
+    width: 100%;
+    height: 100%;
+}
+*/
+@media only screen and (min-width: 1000px){
+    .message{
+        max-width: 27%;
+        margin-top: 2%;
+        margin-left: 2%;
+        display: inline-block;
+    }
+
+    .messageLeft{
+        position: absolute;
+        left: 3%;
+        top: 38%;
+    }
+    
+    .ptext{
+        line-height: 0.8;
+        margin: 0px;
+    }
+    
+    .text{
+        font-family: KlavikaLight;
+        font-size: 3.5em; 
+        font-weight: 600;
+        color: rgb(233, 233, 233); 
+        display: inline-block;
+        border-bottom: 1px solid currentColor;
+    }
+
+    .button-container{
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: 0px;
+        padding: 0px;
+        top: calc(50% - 70px);
+        text-align: center;
+    }    
+
+    .button-container:hover .left-button{
+        border: solid rgb(224, 224, 224);
+        border-width: 0 0 2.2px 2.2px;
+    }
+    
+    .button-container:hover .right-button{
+        border: solid rgb(224, 224, 224);
+        border-width: 2.2px 2.2px 0 0;
+    }
+
+    #left-button-container{
+        position: absolute;
+        left: 2%;
+    }
+    
+    #right-button-container{
+        position: absolute;
+        right: 2%;
+    }      
+
+    .right-button {
+        border: solid white;
+        border-width: 2.2px 2.2px 0 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+        
+    .left-button {
+        border: solid white;
+        border-width: 0 0 2.2px 2.2px; 
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    #initialText{
+        position: absolute;
+        font-family: KlavikaLight;
+        font-size: 0.8em;
+        display: inline-block;
+        color: rgb(218, 218, 218);
+        width: 25%; 
+        left: 2.1%;
+        bottom: 12%;      
+    }
+
+    #grid{
+        display: grid;  
+        grid-template-columns: repeat(10, 1fr);   
+        position: absolute;  
+        width: 14%;
+        padding: 0px;
+        border-left: 1px dotted white;
+        border-top: 1px dotted white;
+        border-bottom: 1px dotted white;
+        left: 2.1%;
+        bottom: 4%;
+    }
+
+    .pageSelector{
+        font-family: KlavikaLight;
+        font-size: 1em;
+        border-right: 1px dotted white;
+        padding: 1% 7%;
+        color: white;
+        margin: 0px;
+        text-align: center;
+    }
+
+    .pageSelector:hover{
+        cursor: pointer;
+        color: rgb(218, 218, 218);
+    }
+
+    #stepCounter{
+        position: absolute;
+        font-family: KlavikaLight;
+        font-size: 0.8em;
+        display: inline-block;
+        color: rgb(218, 218, 218);
+        width: 25%; 
+        left: 17%;
+        bottom: 4%;     
+    }
+
+    #logo{
+        display: inline-block;
+        z-index: 2;
+        position: absolute;
+        width: 6%;
+        right: 2%;
+        bottom: 0%;
+    }
+
+    .svg-logo-mm{
+        fill: white;
+        width: 100%;
+        height: 100%;
+    }
+}
