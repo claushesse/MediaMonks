@@ -31,12 +31,12 @@ const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%
 //const positions = ["-0px", "-800px", "-1900x", "-2700px", "-3400px", "-5200px", "-6000px", "-9000px", "-12000px%", "-13000px"];
 let currentPosition = 0;
 
-window.onload = function() {
+/*window.onload = function() {
     setTimeout(() => { 
         //loading.classList.remove("loading");
         loading.classList.add("loadingHidden");
     }, 2000);
-};
+};*/
 
 function checkPosition(){
 
