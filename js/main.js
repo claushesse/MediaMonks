@@ -1,3 +1,4 @@
+const loading = document.querySelector('.loading');
 const leftButton = document.querySelector('#left-button-container');
 const rightButton = document.querySelector('#right-button-container');
 const background = document.querySelector('#background');
@@ -29,6 +30,13 @@ let t0, t1, t2, t3, t4, t5, t6, t7, t8, t9;
 const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%", "112%"];
 //const positions = ["-0px", "-800px", "-1900x", "-2700px", "-3400px", "-5200px", "-6000px", "-9000px", "-12000px%", "-13000px"];
 let currentPosition = 0;
+
+window.onload = function() {
+    setTimeout(() => { 
+        loading.classList.remove("loading");
+        loading.classList.add("loadingHidden");
+    }, 2000);
+};
 
 function checkPosition(){
 
@@ -136,8 +144,6 @@ function checkPosition(){
             break;
 
         case 1:
-            //stepCounter.classList.remove("visible");
-            //stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector1').style.backgroundColor = "white";
             document.querySelector('#pageSelector1').style.color = "black";
             t1 = setTimeout(() => { 
