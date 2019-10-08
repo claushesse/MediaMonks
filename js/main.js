@@ -25,6 +25,7 @@ const selectors = document.querySelectorAll('.pageSelector');
 const mail = document.querySelector('#mail');
 const facebook = document.querySelector('#facebook');
 const twitter = document.querySelector('#twitter');
+let t0, t1, t2, t3, t4, t5, t6, t7, t8, t9;
 const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%", "112%"];
 //const positions = ["-0px", "-800px", "-1900x", "-2700px", "-3400px", "-5200px", "-6000px", "-9000px", "-12000px%", "-13000px"];
 let currentPosition = 0;
@@ -39,7 +40,7 @@ function checkPosition(){
         buttonLeftContainer.classList.add("visible"); 
         buttonLeftContainer.classList.remove("hidden");
         document.querySelector('#pageSelector0').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector0').style.color = "white";
+        clearTimeout(t0);
     }
 
     if(currentPosition != 1){
@@ -47,6 +48,7 @@ function checkPosition(){
         message2.classList.add("hidden");
         document.querySelector('#pageSelector1').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector1').style.color = "white";
+        clearTimeout(t1);
     }
 
     if(currentPosition != 2){
@@ -54,6 +56,7 @@ function checkPosition(){
         message3.classList.add("hidden");
         document.querySelector('#pageSelector2').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector2').style.color = "white";
+        clearTimeout(t2);
     }
 
     if(currentPosition != 3){
@@ -61,6 +64,7 @@ function checkPosition(){
         message4.classList.add("hidden");
         document.querySelector('#pageSelector3').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector3').style.color = "white";
+        clearTimeout(t3);
     }
 
     if(currentPosition != 4){
@@ -68,6 +72,7 @@ function checkPosition(){
         message5.classList.add("hidden");
         document.querySelector('#pageSelector4').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector4').style.color = "white";
+        clearTimeout(t4);
     }
 
     if(currentPosition != 5){
@@ -75,6 +80,7 @@ function checkPosition(){
         message6.classList.add("hidden");
         document.querySelector('#pageSelector5').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector5').style.color = "white";
+        clearTimeout(t5);
     }
 
     if(currentPosition != 6){
@@ -82,6 +88,7 @@ function checkPosition(){
         message7.classList.add("hidden");
         document.querySelector('#pageSelector6').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector6').style.color = "white";
+        clearTimeout(t6);
     }
 
     if(currentPosition != 7){
@@ -89,6 +96,7 @@ function checkPosition(){
         message8.classList.add("hidden");
         document.querySelector('#pageSelector7').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector7').style.color = "white";
+        clearTimeout(t7);
     }
 
     if(currentPosition != 8){
@@ -96,6 +104,7 @@ function checkPosition(){
         message9.classList.add("hidden");
         document.querySelector('#pageSelector8').style.backgroundColor = "transparent";
         document.querySelector('#pageSelector8').style.color = "white";
+        clearTimeout(t8);
     }
 
     if(currentPosition != 9){
@@ -103,14 +112,12 @@ function checkPosition(){
         message10.classList.add("hidden");
         buttonRightContainer.classList.remove("hidden");
         buttonRightContainer.classList.add("visible");
-        message10.style.display = 'none';
         message10.style.transition = "right 1s";
-        message10.style.right = "-40%";
-        final.style.display = 'none';
+        message10.style.right = "-100%";
         final.style.transition = "right 1s";
-        final.style.right = "-40%";
+        final.style.right = "-100%";
         document.querySelector('#pageSelector9').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector9').style.color = "white";
+        clearTimeout(t9);
     }
 
     switch(currentPosition){
@@ -120,8 +127,7 @@ function checkPosition(){
             buttonLeftContainer.classList.remove("visible"); 
             buttonLeftContainer.classList.add("hidden");
             document.querySelector('#pageSelector0').style.backgroundColor = "white";
-            document.querySelector('#pageSelector0').style.color = "black";
-            setTimeout(() => { 
+            t0 = setTimeout(() => { 
                 initialText.classList.remove("hidden");
                 initialText.classList.add("visible");
                 message1.classList.remove("hidden"); 
@@ -130,11 +136,11 @@ function checkPosition(){
             break;
 
         case 1:
-            stepCounter.classList.remove("visible");
-            stepCounter.classList.add("hidden");
+            //stepCounter.classList.remove("visible");
+            //stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector1').style.backgroundColor = "white";
             document.querySelector('#pageSelector1').style.color = "black";
-            setTimeout(() => { 
+            t1 = setTimeout(() => { 
                 stepCounter.classList.remove("hidden"); 
                 stepCounter.classList.add("visible"); 
                 message2.classList.remove("hidden"); 
@@ -148,7 +154,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector2').style.backgroundColor = "white";
             document.querySelector('#pageSelector2').style.color = "black";
-            setTimeout(() => {
+            t2 = setTimeout(() => {
                 message3.classList.remove("hidden"); 
                 message3.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -161,7 +167,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector3').style.backgroundColor = "white";
             document.querySelector('#pageSelector3').style.color = "black";
-            setTimeout(() => {
+            t3 = setTimeout(() => {
                 message4.classList.remove("hidden"); 
                 message4.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -174,7 +180,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector4').style.backgroundColor = "white";
             document.querySelector('#pageSelector4').style.color = "black";
-            setTimeout(() => { 
+            t4 = setTimeout(() => { 
                 message5.classList.remove("hidden"); 
                 message5.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -188,7 +194,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector5').style.backgroundColor = "white";
             document.querySelector('#pageSelector5').style.color = "black";
-            setTimeout(() => { 
+            t5 = setTimeout(() => { 
                 message6.classList.remove("hidden"); 
                 message6.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -202,7 +208,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector6').style.backgroundColor = "white";
             document.querySelector('#pageSelector6').style.color = "black";
-            setTimeout(() => { 
+            t6 = setTimeout(() => { 
                 message7.classList.remove("hidden"); 
                 message7.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -216,7 +222,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector7').style.backgroundColor = "white";
             document.querySelector('#pageSelector7').style.color = "black";
-            setTimeout(() => { 
+            t7 = setTimeout(() => { 
                 message8.classList.remove("hidden"); 
                 message8.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -230,7 +236,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector8').style.backgroundColor = "white";
             document.querySelector('#pageSelector8').style.color = "black";
-            setTimeout(() => { 
+            t8 = setTimeout(() => { 
                 message9.classList.remove("hidden"); 
                 message9.classList.add("visible");
                 stepCounter.classList.remove("hidden"); 
@@ -245,30 +251,16 @@ function checkPosition(){
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector9').style.backgroundColor = "white";
-            document.querySelector('#pageSelector9').style.color = "black";
-            if(window.innerWidth > 600){
-                setTimeout(() => { 
-                    message10.classList.remove("hidden"); 
-                    message10.classList.add("visible");
-                    message10.style.transition = "right 0.5s ease-out";
-                    message10.style.right = "0%";
-                    final.style.transition = "right 0.5s ease-out";
-                    final.style.right = "0%";
-                }, 1000);
-                message10.style.display = 'inline-block'
-                final.style.display = 'inline-block'
-            }else{
-                setTimeout(() => { 
-                    message10.style.display = 'inline-block'
-                    final.style.display = 'inline-block'
-                    message10.classList.remove("hidden"); 
-                    message10.classList.add("visible");
-                    message10.style.transition = "right 0.5s ease-out";
-                    message10.style.right = "0%";
-                    final.style.transition = "right 0.5s ease-out";
-                    final.style.right = "0%";
-                }, 1000);
-            }
+            t9 = setTimeout(() => { 
+                message10.classList.remove("hidden"); 
+                message10.classList.add("visible");
+                message10.style.transition = "right 0.5s ease-out";
+                message10.style.right = "0%";
+                final.style.transition = "right 0.5s ease-out";
+                final.style.right = "0%";
+            }, 1000);
+            message10.style.display = 'inline-block'
+            final.style.display = 'inline-block'
             break;
 
         default: 
