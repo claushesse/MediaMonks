@@ -341,7 +341,7 @@ leftButton.addEventListener('click', () => {
     checkPosition();
 })
 
-leftButton.addEventListener('touchend', () => {
+leftButton.addEventListener('touchend', (e) => {
     e.preventDefault();
     e.stopPropagation();
     currentPosition = currentPosition - 1; 
@@ -399,8 +399,14 @@ background.addEventListener('touchend', (e) => {
     function tactil(){
         if(lastTouch < firstTouch){
             currentPosition = currentPosition + 1;
+            if (currentPosition > 9){
+                currentPosition = 9;
+            }
         }else{
             currentPosition = currentPosition - 1;
+            if (currentPosition < 0){
+                currentPosition = 0;
+            }
         }
         checkPosition();
     }
