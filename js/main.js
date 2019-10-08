@@ -26,6 +26,7 @@ const mail = document.querySelector('#mail');
 const facebook = document.querySelector('#facebook');
 const twitter = document.querySelector('#twitter');
 const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%", "112%"];
+//const positions = ["-0px", "-800px", "-1900x", "-2700px", "-3400px", "-5200px", "-6000px", "-9000px", "-12000px%", "-13000px"];
 let currentPosition = 0;
 
 function checkPosition(){
@@ -245,9 +246,9 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector9').style.backgroundColor = "white";
             document.querySelector('#pageSelector9').style.color = "black";
-            message10.style.display = 'inline-block'
-            final.style.display = 'inline-block'
             setTimeout(() => { 
+                message10.style.display = 'inline-block'
+                final.style.display = 'inline-block'
                 message10.classList.remove("hidden"); 
                 message10.classList.add("visible");
                 message10.style.transition = "right 0.5s ease-out";
@@ -381,11 +382,15 @@ background.addEventListener('touchmove', (e) => {
     e.stopPropagation();
     //console.log(e.touches[0].clientX);
     difference = firstTouch - e.touches[0].clientX;
-    var backgroundCalc = background.style.backgroundPosition.split(" ")[0];
-    background.style.backgroundPosition = "calc("+difference - (backgroundCalc)+"px)"
-    console.log(background.style.backgroundPosition, difference);
-})
-*/
+    var backgroundSplitted = Number(background.style.backgroundPosition.split("px")[0]);
+    var backgroundCalc = backgroundSplitted - difference;
+    var backgroundPx = backgroundCalc + "px";
+    background.style.backgroundPosition = backgroundPx;
+    console.log(backgroundCalc, backgroundPx);
+    //background.style.backgroundPosition = "calc("+difference - (backgroundCalc)+"px)"
+    //console.log(background.style.backgroundPosition, difference);
+})*/
+
 background.addEventListener('touchend', (e) => {
     e.preventDefault();
     e.stopPropagation();
