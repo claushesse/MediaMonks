@@ -246,16 +246,29 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             document.querySelector('#pageSelector9').style.backgroundColor = "white";
             document.querySelector('#pageSelector9').style.color = "black";
-            setTimeout(() => { 
+            if(window.innerWidth > 600){
+                setTimeout(() => { 
+                    message10.classList.remove("hidden"); 
+                    message10.classList.add("visible");
+                    message10.style.transition = "right 0.5s ease-out";
+                    message10.style.right = "0%";
+                    final.style.transition = "right 0.5s ease-out";
+                    final.style.right = "0%";
+                }, 1000);
                 message10.style.display = 'inline-block'
                 final.style.display = 'inline-block'
-                message10.classList.remove("hidden"); 
-                message10.classList.add("visible");
-                message10.style.transition = "right 0.5s ease-out";
-                message10.style.right = "0%";
-                final.style.transition = "right 0.5s ease-out";
-                final.style.right = "0%";
-            }, 1000);
+            }else{
+                setTimeout(() => { 
+                    message10.style.display = 'inline-block'
+                    final.style.display = 'inline-block'
+                    message10.classList.remove("hidden"); 
+                    message10.classList.add("visible");
+                    message10.style.transition = "right 0.5s ease-out";
+                    message10.style.right = "0%";
+                    final.style.transition = "right 0.5s ease-out";
+                    final.style.right = "0%";
+                }, 1000);
+            }
             break;
 
         default: 
