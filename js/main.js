@@ -33,7 +33,7 @@ let currentPosition = 0;
 
 window.onload = function() {
     setTimeout(() => { 
-        loading.classList.remove("loading");
+        //loading.classList.remove("loading");
         loading.classList.add("loadingHidden");
     }, 2000);
 };

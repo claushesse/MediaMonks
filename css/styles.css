@@ -42,20 +42,29 @@ body{
 }
 
 .loading{
+    overflow: hidden;
     background-color: black;
     width: 100vw;
     height: 100vh;
-    opacity: 1; 
     visibility: visible;
-}
-
-.loadingHidden { 
-    opacity: 0; 
-    visibility: hidden;
+    opacity: 1; 
     transition: opacity 2s linear;
     -webkit-transition: opacity 2s linear;
     -moz-transition: opacity 2s linear;
-    -o-transition: opacity 2s linear; 
+    -o-transition: opacity 2s linear;
+    z-index: 9;
+}
+
+.loadingHidden { 
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0; 
+    transition: visibility 0s 2s, opacity 2s linear;
+    -webkit-transition: visibility 0s 2s, opacity 2s linear;
+    -moz-transition: visibility 0s 2s, opacity 2s linear;
+    -o-transition: visibility 0s 2s, opacity 2s linear; 
+    margin-top: -10000px;
+    transition: margin-top 0s 2s;
 }
 
 #background{
@@ -272,7 +281,7 @@ body{
 
 #logo{
     display: inline-block;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     width: 20%;
     right: 6%;
@@ -480,8 +489,8 @@ body{
 
     #logo{
         display: inline-block;
-        z-index: 2;
-        position: fixed;
+        z-index: 1;
+        position: absolute;
         /*width: 6%;*/
         width: calc(100vw * 0.07);
         right: 2%;
@@ -676,7 +685,7 @@ body{
     
     #logo{
         display: inline-block;
-        z-index: 2;
+        z-index: 1;
         position: absolute;
         /*width: 13%;*/
         width: calc(100vw * 0.1);
