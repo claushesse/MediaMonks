@@ -26,17 +26,21 @@ const selectors = document.querySelectorAll('.pageSelector');
 const mail = document.querySelector('#mail');
 const facebook = document.querySelector('#facebook');
 const twitter = document.querySelector('#twitter');
-let t0, t1, t2, t3, t4, t5, t6, t7, t8, t9;
 const positions = ["0%", "13%", "26%", "39%", "52%", "65%", "78%", "100%", "100%", "112%"];
-//const positions = ["-0px", "-800px", "-1900x", "-2700px", "-3400px", "-5200px", "-6000px", "-9000px", "-12000px%", "-13000px"];
+let t0, t1, t2, t3, t4, t5, t6, t7, t8, t9;
 let currentPosition = 0;
 
-/*window.onload = function() {
-    setTimeout(() => { 
-        //loading.classList.remove("loading");
+window.addEventListener('load', function () {
+    setTimeout(function () {
         loading.classList.add("loadingHidden");
-    }, 2000);
-};*/
+    }, 3000);
+});
+
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 function checkPosition(){
 

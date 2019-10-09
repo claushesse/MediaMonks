@@ -39,33 +39,94 @@ body{
     color: #fff;
     margin: 0px;
     padding: 0px;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .loading{
+    position: absolute;
     overflow: hidden;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
     background-color: black;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     visibility: visible;
     opacity: 1; 
-    transition: opacity 2s linear;
-    -webkit-transition: opacity 2s linear;
-    -moz-transition: opacity 2s linear;
-    -o-transition: opacity 2s linear;
-    z-index: 9;
+    zoom: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: visibility 1s ease-in;
+    transition: opacity 1s ease-in;
+    -webkit-transition: visibility 1s ease-in; 
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: visibility 1s ease-in, opacity 1s ease-in;
+    -o-transition: visibility 1s ease-in, opacity 1s ease-in; 
 }
 
-.loadingHidden { 
-    overflow: hidden;
+.loadingHidden{ 
     visibility: hidden;
     opacity: 0; 
-    transition: visibility 0s 2s, opacity 2s linear;
-    -webkit-transition: visibility 0s 2s, opacity 2s linear;
-    -moz-transition: visibility 0s 2s, opacity 2s linear;
-    -o-transition: visibility 0s 2s, opacity 2s linear; 
-    margin-top: -10000px;
-    transition: margin-top 0s 2s;
+    transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+    -webkit-transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+    -moz-transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+    -o-transition: visibility 0.5s ease-in, opacity 0.5s ease-in; 
 }
+
+#monkImage{
+    animation-name: appear;  
+    animation-duration: .3s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(.1);
+    }
+
+    80%{
+        transform: scale(1.2);       
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+#monkWrapper{
+    margin: 0 auto;
+    padding: 0;
+    display: inline-block;
+    animation-name: float;  
+    animation-duration: 2s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 
 #background{
     width: 100vw;
@@ -78,6 +139,8 @@ body{
     transition: background-position 1s ease-in-out;
     -webkit-transition: background-position 1s ease-in-out; /* Safari prior 6.1 */
     z-index: 0;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .hidden { 
@@ -151,8 +214,8 @@ body{
 .button-container{
     display: block;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 0px;
     padding: 0px;
     top: calc(50% - 70px);
@@ -203,7 +266,7 @@ body{
     position: absolute;
     font-family: KlavikaLight;
     /*font-size: 1.7em;*/
-    font-size: calc(100% * 1.7); 
+    font-size: calc(100% * 1.5); 
     display: inline-block;
     color: rgb(218, 218, 218);
     /*width: 100%;*/
@@ -528,14 +591,14 @@ body{
         position: fixed;
         left: 7%;
         /*top: 25%;*/
-        top: calc(100vh * 0.35);
+        top: calc(100vh * 0.25);
     }
     
     .messageRight{
         position: fixed;
         right: 7%;
         /*top: 25%;*/
-        top: calc(100vh * 0.35);
+        top: calc(100vh * 0.25);
     }
     
     
@@ -547,7 +610,7 @@ body{
     .text{
         font-family: KlavikaLight;
         /*font-size: 2em;*/ 
-        font-size: calc(100vw * 0.03); 
+        font-size: calc(100vw * 0.04); 
         font-weight: 600;
         color: rgb(233, 233, 233); 
         display: inline-block;
@@ -659,8 +722,9 @@ body{
         display: inline-block;
         color: rgb(218, 218, 218);
         width: 60%; 
-        left: 26%;
-        bottom: 6.5%;     
+        /*left: 30.5%;*/
+        left: calc(100vw * 0.30);
+        bottom: 6%;     
     }
     
     #final{
