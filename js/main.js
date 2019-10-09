@@ -38,8 +38,8 @@ window.addEventListener('load', function () {
 
 window.addEventListener('resize', () => {
     if(window.innerWidth < 600){
-        document.body.offsetHeight = window.innerHeight;
-        background.offsetHeight = window.innerHeight;
+        document.body.scrollHeight = window.innerHeight;
+        background.scrollHeight = window.innerHeight;
     }
 });
 
