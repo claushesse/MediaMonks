@@ -37,9 +37,10 @@ window.addEventListener('load', function () {
 });
 
 window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    let vhString = vh.toString();
-    document.documentElement.style.setProperty('--vh', vhString+"px");
+    if(window.innerWidth < 600){
+        document.body.offsetHeight = window.innerHeight;
+        background.offsetHeight = window.innerHeight;
+    }
 });
 
 function checkPosition(){
@@ -390,30 +391,11 @@ background.addEventListener('touchstart', (e) => {
     e.preventDefault();
     e.stopPropagation();
     firstTouch = e.touches[0].clientX;
-    if(window.innerWidth < 700){
-        toggleFullScreen();
-        console.log("entre");
-    }
 })
-/*
-background.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    //console.log(e.touches[0].clientX);
-    difference = firstTouch - e.touches[0].clientX;
-    var backgroundSplitted = Number(background.style.backgroundPosition.split("px")[0]);
-    var backgroundCalc = backgroundSplitted - difference;
-    var backgroundPx = backgroundCalc + "px";
-    background.style.backgroundPosition = backgroundPx;
-    console.log(backgroundCalc, backgroundPx);
-    //background.style.backgroundPosition = "calc("+difference - (backgroundCalc)+"px)"
-    //console.log(background.style.backgroundPosition, difference);
-})*/
 
 background.addEventListener('touchend', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    //console.log(e.changedTouches[0].clientX);
     lastTouch = e.changedTouches[0].clientX; 
     function tactil(){
         if(lastTouch < firstTouch){
@@ -431,11 +413,5 @@ background.addEventListener('touchend', (e) => {
     }
     tactil();
 })
-
-function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-        document.body.requestFullscreen();
-    } 
-}
 
 checkPosition();

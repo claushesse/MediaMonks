@@ -39,8 +39,6 @@ body{
     color: #fff;
     margin: 0px;
     padding: 0px;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
 }
 
 .loading{
@@ -120,7 +118,7 @@ body{
     animation-timing-function: ease-out; 
     animation-delay: 0;
     animation-direction: alternate;
-    animation-iteration-count: 1;
+    animation-iteration-count: 3;
     animation-fill-mode: none;
     animation-play-state: running;
 }
@@ -190,9 +188,10 @@ body{
 
 #patience{
     font-family: KlavikaLight;
+    color: white;
     font-style: italic;
     display: inline-block;
-    text-align: right;
+    text-align: center;
     margin: 0;
     padding: 0;
     opacity: 0;
@@ -200,7 +199,7 @@ body{
     animation-duration: 2s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
-    animation-iteration-count: 1;
+    animation-iteration-count: 3;
     animation-fill-mode: none;
     animation-play-state: running;
 }
@@ -239,24 +238,11 @@ body{
         transform: scale(1);
     }
 
-    25% {
-        transform: translateX(0px);
-    }
-
-    50% {
-        transform: translateX(0px);
-    }
-
-    60% {
-        transform: translateX(0px);
-    }
-
     90%{
         opacity: 1;
     }
 
     100% {
-        transform: translateX(0px);
         opacity: 0;
     }
 
@@ -265,52 +251,45 @@ body{
 #youngPadawan{
     font-family: KlavikaLight;
     font-style: italic; 
+    color: white;
+    font-size: 0em;
     display: inline-block;
     opacity: 0;
     text-align: left;
     margin: 0;
-    margin-left: 0.4em;
-    width: 0px;
+    margin-left: 10em;
     animation-name: padawan; 
     animation-duration: 2s; 
     animation-timing-function: linear; 
     animation-delay: 0;
-    animation-iteration-count: 1;
+    animation-iteration-count: 3;
     animation-fill-mode: none;
     animation-play-state: running;
 }
 
 @keyframes padawan {
     0% {
-        transform: scale(0);
         opacity: 1;
     }
 
     51% {
-        transform: scale(0);
-        width: 0%;
         font-size: 0em;
     }
 
     52%{
-        transform: scale(0.2);
-        width: 2%;
+        font-size: 0.1em;
     }
 
     54%{
-        transform: scale(0.5);
-        width: 2.5%;
-        font-size: 0.1em;
+        font-size: 0.5em;
     }  
 
     58%{
-        transform: scale(1);
-        width: 8%;
         font-size: 1em;
     }  
 
     60% {
-        width: 8%;
+        font-size: 1em;
     }
 
     90%{
@@ -318,8 +297,8 @@ body{
     }
 
     100% {
-        width: 8%;
         opacity: 0;
+        font-size: 1em
     }
 
 }
@@ -333,9 +312,9 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
     transition: background-position 1.2s ease-in-out;
-    -webkit-transition: background-position 1.2s ease-in-out; /* Safari prior 6.1 */
+    -webkit-transition: background-position 1.2s ease-in-out; 
     z-index: 0;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: 100vh; 
     height: calc(var(--vh, 1vh) * 100);
 }
 
