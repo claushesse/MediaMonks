@@ -33,11 +33,10 @@ let currentPosition = 0;
 window.addEventListener('load', function () {
     setTimeout(function () {
         loading.classList.add("loadingHidden");
-    }, 3000);
+    }, 2500);
 });
 
 window.addEventListener('resize', () => {
-    // We execute the same script as before
     let vh = window.innerHeight * 0.01;
     let vhString = vh.toString();
     document.documentElement.style.setProperty('--vh', vhString+"px");
@@ -265,9 +264,9 @@ function checkPosition(){
             t9 = setTimeout(() => { 
                 message10.classList.remove("hidden"); 
                 message10.classList.add("visible");
-                message10.style.transition = "right 0.5s ease-out";
+                message10.style.transition = "right 0.6s ease-out";
                 message10.style.right = "0%";
-                final.style.transition = "right 0.5s ease-out";
+                final.style.transition = "right 0.6s ease-out";
                 final.style.right = "0%";
             }, 1000);
             message10.style.display = 'inline-block'
@@ -391,6 +390,10 @@ background.addEventListener('touchstart', (e) => {
     e.preventDefault();
     e.stopPropagation();
     firstTouch = e.touches[0].clientX;
+    if(window.innerWidth < 700){
+        toggleFullScreen();
+        console.log("entre");
+    }
 })
 /*
 background.addEventListener('touchmove', (e) => {
@@ -428,5 +431,11 @@ background.addEventListener('touchend', (e) => {
     }
     tactil();
 })
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.body.requestFullscreen();
+    } 
+}
 
 checkPosition();

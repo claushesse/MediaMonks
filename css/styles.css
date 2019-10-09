@@ -56,6 +56,7 @@ body{
     opacity: 1; 
     zoom: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: visibility 1s ease-in;
@@ -77,7 +78,7 @@ body{
 
 #monkImage{
     animation-name: appear;  
-    animation-duration: .3s; 
+    animation-duration: .5s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
     animation-direction: alternate;
@@ -104,29 +105,224 @@ body{
 #monkWrapper{
     margin: 0 auto;
     padding: 0;
-    display: inline-block;
+    display: block;
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    background:transparent url(../images/smoke.gif) no-repeat center center; 
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     animation-name: float;  
     animation-duration: 2s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
     animation-direction: alternate;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     animation-fill-mode: none;
     animation-play-state: running;
 }
 
 @keyframes float {
-	0% {
+    0% {
+        transform: translatey(5px);
+        opacity: 1;
+    }
+
+    10%{
+        transform: translatey(-80px);       
+    }
+
+    20% {
+        transform: translatey(-15px);
+    }
+
+	30% {
 		transform: translatey(0px);
-	}
+    }
+
+    40%{
+        transform: translatey(2px);
+    }
+
+    45%{
+        transform: translatey(3px);
+    }
+
+    47%{
+        transform: translatey(0px);
+    }
+
+    48%{
+        transform: translatey(-3px);
+    }   
+
 	50% {
+		transform: translatey(-7px);
+    }
+    
+    70%{
 		transform: translatey(-20px);
-	}
+    }
+
+    90%{
+        opacity: 1;
+    }
+
 	100% {
-		transform: translatey(0px);
+        transform: translatey(0px);
+        opacity: 0;
 	}
 }
 
+#animationMessage{
+    margin: 0 auto;
+    margin-top: 1%;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#patience{
+    font-family: KlavikaLight;
+    font-style: italic;
+    display: inline-block;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation-name: patience;  
+    animation-duration: 2s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes patience {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    
+    5% {
+        transform: scale(0);
+    }
+
+    7% {
+        transform: scale(0);
+    }
+
+    10%{
+        transform: scale(0.3);
+    }
+
+    13% {
+        transform: scale(0.7);
+    }
+
+    15% {
+        transform: scale(1);
+    }
+
+    17%{
+        transform: scale(1.5);       
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    60% {
+        transform: translateX(0px);
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+}
+
+#youngPadawan{
+    font-family: KlavikaLight;
+    font-style: italic; 
+    display: inline-block;
+    opacity: 0;
+    text-align: left;
+    margin: 0;
+    margin-left: 0.4em;
+    width: 0px;
+    animation-name: padawan; 
+    animation-duration: 2s; 
+    animation-timing-function: linear; 
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes padawan {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    51% {
+        transform: scale(0);
+        width: 0%;
+        font-size: 0em;
+    }
+
+    52%{
+        transform: scale(0.2);
+        width: 2%;
+    }
+
+    54%{
+        transform: scale(0.5);
+        width: 2.5%;
+        font-size: 0.1em;
+    }  
+
+    58%{
+        transform: scale(1);
+        width: 8%;
+        font-size: 1em;
+    }  
+
+    60% {
+        width: 8%;
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    100% {
+        width: 8%;
+        opacity: 0;
+    }
+
+}
 
 #background{
     width: 100vw;
@@ -136,8 +332,8 @@ body{
     background-image: url(../images/background.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-    transition: background-position 1s ease-in-out;
-    -webkit-transition: background-position 1s ease-in-out; /* Safari prior 6.1 */
+    transition: background-position 1.2s ease-in-out;
+    -webkit-transition: background-position 1.2s ease-in-out; /* Safari prior 6.1 */
     z-index: 0;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
@@ -155,14 +351,13 @@ body{
 .visible{
     opacity: 1; 
     visibility: visible;
-    transition: visibility 1s ease-out, opacity 1s ease-out;
-    -webkit-transition: visibility visibility 1s ease-out, opacity 1s ease-out;
-    -moz-transition: visibility 1s ease-out, opacity 1s ease-out;
-    -o-transition: visibility 1s ease-out, opacity 1s ease-out;         
+    transition: visibility 1.2s ease-out, opacity 1.2s ease-out;
+    -webkit-transition: visibility visibility 1.2s ease-out, opacity 1.2s ease-out;
+    -moz-transition: visibility 1.2s ease-out, opacity 1.2s ease-out;
+    -o-transition: visibility 1.2s ease-out, opacity 1.2s ease-out;         
 }
 
 .message{
-    /*max-width: 80%;*/
     max-width: calc(100vw * 0.70);
     margin: 4%;
     display: inline-block;
@@ -183,14 +378,12 @@ body{
 .messageLeft{
     position: fixed;
     left: 7%;
-    /*top: 41.5%;*/
     top: calc(100vh * 0.35);
 }
 
 .messageRight{
     position: fixed;
     right: 7%;
-    /*top: 41.5%;*/
     top: calc(100vh * 0.35);
     text-align: right;
 }
@@ -203,7 +396,6 @@ body{
 
 .text{
     font-family: KlavikaLight;
-    /*font-size: 5.5em;*/ 
     font-size: calc(100vw * 0.07); 
     font-weight: 600;
     color: rgb(233, 233, 233); 
@@ -265,11 +457,9 @@ body{
 #initialText{
     position: absolute;
     font-family: KlavikaLight;
-    /*font-size: 1.7em;*/
     font-size: calc(100% * 1.5); 
     display: inline-block;
     color: rgb(218, 218, 218);
-    /*width: 100%;*/
     width: calc(100vw);  
     padding-left: 6%;
     bottom: 15%;      
@@ -279,7 +469,6 @@ body{
     display: grid;  
     grid-template-columns: repeat(10, 1fr);   
     position: absolute;  
-    /*width: 50%;*/
     width: calc(100vw * 0.40);
     min-width: 50px;
     padding: 0px;
@@ -313,7 +502,6 @@ body{
 #stepCounter{
     position: absolute;
     font-family: KlavikaLight;
-    /*font-size: 1.5em;*/
     font-size: calc(100% * 0.9);
     display: inline-block;
     color: rgb(218, 218, 218);
@@ -325,7 +513,6 @@ body{
 #final{
     position: absolute;
     font-family: KlavikaLight;
-    /*font-size: 2.5em;*/
     font-size: calc(100% * 1.8);
     text-align: right;
     display: inline-block;
@@ -396,14 +583,12 @@ body{
     .messageLeft{
         position: absolute;
         left: 3%;
-        /*top: 37%;*/
         top: calc(100vh * 0.35);
     }
 
     .messageRight{
         position: absolute;
         right: 3%;
-        /*top: 37%;*/
         top: calc(100vh * 0.35);
         text-align: right;
     }
@@ -415,7 +600,6 @@ body{
     
     .text{
         font-family: KlavikaLight;
-        /*font-size: 3.5em; */
         font-size: calc(100vw * 0.029); 
         font-weight: 600;
         color: rgb(233, 233, 233); 
@@ -477,11 +661,9 @@ body{
     #initialText{
         position: absolute;
         font-family: KlavikaLight;
-        /*font-size: 0.9em;*/
         font-size: calc(100vw * 0.009); 
         display: inline-block;
         color: rgb(218, 218, 218);
-        /*width: 30%; */
         width: calc(100vw * 0.9);  
         padding-left: 2%;
         bottom: 12%; 
@@ -554,7 +736,6 @@ body{
         display: inline-block;
         z-index: 1;
         position: absolute;
-        /*width: 6%;*/
         width: calc(100vw * 0.07);
         right: 2%;
         bottom: 0%;
@@ -590,14 +771,12 @@ body{
     .messageLeft{
         position: fixed;
         left: 7%;
-        /*top: 25%;*/
         top: calc(100vh * 0.25);
     }
     
     .messageRight{
         position: fixed;
         right: 7%;
-        /*top: 25%;*/
         top: calc(100vh * 0.25);
     }
     
@@ -609,7 +788,6 @@ body{
     
     .text{
         font-family: KlavikaLight;
-        /*font-size: 2em;*/ 
         font-size: calc(100vw * 0.04); 
         font-weight: 600;
         color: rgb(233, 233, 233); 
@@ -683,7 +861,6 @@ body{
         display: grid;  
         grid-template-columns: repeat(10, 1fr);   
         position: absolute;  
-        /*width: 30%;*/
         width: calc(100vw * 0.25);
         min-width: 20%;
         padding: 0px;
@@ -696,7 +873,6 @@ body{
     
     .pageSelector{
         font-family: KlavikaLight;
-        /*font-size: 1em;*/
         font-size: calc(100vh * 0.020);
         border-right: 2px dotted white;
         padding: 1% 7%;
@@ -717,12 +893,10 @@ body{
     #stepCounter{
         position: absolute;
         font-family: KlavikaLight;
-        /*font-size: 0.9em;*/
         font-size: calc(100vh * 0.024);
         display: inline-block;
         color: rgb(218, 218, 218);
         width: 60%; 
-        /*left: 30.5%;*/
         left: calc(100vw * 0.30);
         bottom: 6%;     
     }
@@ -751,7 +925,6 @@ body{
         display: inline-block;
         z-index: 1;
         position: absolute;
-        /*width: 13%;*/
         width: calc(100vw * 0.1);
         right: 5%;
         bottom: 0%;
