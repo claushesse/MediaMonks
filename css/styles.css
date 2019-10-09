@@ -270,6 +270,8 @@ body{
 @keyframes padawan {
     0% {
         opacity: 1;
+        font-size: 0em;
+
     }
 
     51% {
