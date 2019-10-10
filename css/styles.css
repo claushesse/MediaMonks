@@ -975,6 +975,7 @@ body{
         font-family: KlavikaLight;
         font-size: 0.8em;
         display: inline-block;
+        margin-bottom: 0px;
         color: rgb(218, 218, 218);
         width: 25%; 
         left: 16%;
@@ -1196,6 +1197,7 @@ body{
         font-family: KlavikaLight;
         font-size: 1em;
         display: inline-block;
+        margin-bottom: 0px;
         color: rgb(218, 218, 218);
         width: 60%; 
         left: calc(100vw * 0.30);
