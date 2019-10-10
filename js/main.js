@@ -52,71 +52,63 @@ function checkPosition(){
         message1.classList.add("hidden");
         buttonLeftContainer.classList.add("visible"); 
         buttonLeftContainer.classList.remove("hidden");
-        document.querySelector('#pageSelector0').style.backgroundColor = "transparent";
+        document.querySelector('#pageSelector0').classList.remove("pageSelected"); 
         clearTimeout(t0);
     }
 
     if(currentPosition != 1){
         message2.classList.remove("visible"); 
         message2.classList.add("hidden");
-        document.querySelector('#pageSelector1').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector1').style.color = "white";
+        document.querySelector('#pageSelector1').classList.remove("pageSelected"); 
         clearTimeout(t1);
     }
 
     if(currentPosition != 2){
         message3.classList.remove("visible"); 
         message3.classList.add("hidden");
-        document.querySelector('#pageSelector2').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector2').style.color = "white";
+        document.querySelector('#pageSelector2').classList.remove("pageSelected"); 
         clearTimeout(t2);
     }
 
     if(currentPosition != 3){
         message4.classList.remove("visible"); 
         message4.classList.add("hidden");
-        document.querySelector('#pageSelector3').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector3').style.color = "white";
+        document.querySelector('#pageSelector3').classList.remove("pageSelected"); 
         clearTimeout(t3);
     }
 
     if(currentPosition != 4){
         message5.classList.remove("visible"); 
         message5.classList.add("hidden");
-        document.querySelector('#pageSelector4').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector4').style.color = "white";
+        document.querySelector('#pageSelector4').classList.remove("pageSelected"); 
         clearTimeout(t4);
     }
 
     if(currentPosition != 5){
         message6.classList.remove("visible"); 
         message6.classList.add("hidden");
-        document.querySelector('#pageSelector5').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector5').style.color = "white";
+        document.querySelector('#pageSelector5').classList.remove("pageSelected"); 
         clearTimeout(t5);
     }
 
     if(currentPosition != 6){
         message7.classList.remove("visible"); 
         message7.classList.add("hidden");
-        document.querySelector('#pageSelector6').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector6').style.color = "white";
+        document.querySelector('#pageSelector6').classList.remove("pageSelected"); 
         clearTimeout(t6);
     }
 
     if(currentPosition != 7){
         message8.classList.remove("visible"); 
         message8.classList.add("hidden");
-        document.querySelector('#pageSelector7').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector7').style.color = "white";
+        document.querySelector('#pageSelector7').classList.remove("pageSelected"); 
         clearTimeout(t7);
     }
 
     if(currentPosition != 8){
         message9.classList.remove("visible"); 
         message9.classList.add("hidden");
-        document.querySelector('#pageSelector8').style.backgroundColor = "transparent";
-        document.querySelector('#pageSelector8').style.color = "white";
+        document.querySelector('#pageSelector8').classList.remove("pageSelected"); 
         clearTimeout(t8);
     }
 
@@ -129,7 +121,7 @@ function checkPosition(){
         message10.style.right = "-100%";
         final.style.transition = "right 1s";
         final.style.right = "-100%";
-        document.querySelector('#pageSelector9').style.backgroundColor = "transparent";
+        document.querySelector('#pageSelector9').classList.remove("pageSelected"); 
         clearTimeout(t9);
     }
 
@@ -139,7 +131,7 @@ function checkPosition(){
             stepCounter.classList.add("hidden");
             buttonLeftContainer.classList.remove("visible"); 
             buttonLeftContainer.classList.add("hidden");
-            document.querySelector('#pageSelector0').style.backgroundColor = "white";
+            document.querySelector('#pageSelector0').classList.add("pageSelected"); 
             t0 = setTimeout(() => { 
                 initialText.classList.remove("hidden");
                 initialText.classList.add("visible");
@@ -149,8 +141,7 @@ function checkPosition(){
             break;
 
         case 1:
-            document.querySelector('#pageSelector1').style.backgroundColor = "white";
-            document.querySelector('#pageSelector1').style.color = "black";
+            document.querySelector('#pageSelector1').classList.add("pageSelected"); 
             t1 = setTimeout(() => { 
                 stepCounter.classList.remove("hidden"); 
                 stepCounter.classList.add("visible"); 
@@ -163,8 +154,7 @@ function checkPosition(){
         case 2:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector2').style.backgroundColor = "white";
-            document.querySelector('#pageSelector2').style.color = "black";
+            document.querySelector('#pageSelector2').classList.add("pageSelected"); 
             t2 = setTimeout(() => {
                 message3.classList.remove("hidden"); 
                 message3.classList.add("visible");
@@ -176,8 +166,7 @@ function checkPosition(){
         case 3:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector3').style.backgroundColor = "white";
-            document.querySelector('#pageSelector3').style.color = "black";
+            document.querySelector('#pageSelector3').classList.add("pageSelected"); 
             t3 = setTimeout(() => {
                 message4.classList.remove("hidden"); 
                 message4.classList.add("visible");
@@ -189,8 +178,7 @@ function checkPosition(){
         case 4:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector4').style.backgroundColor = "white";
-            document.querySelector('#pageSelector4').style.color = "black";
+            document.querySelector('#pageSelector4').classList.add("pageSelected"); 
             t4 = setTimeout(() => { 
                 message5.classList.remove("hidden"); 
                 message5.classList.add("visible");
@@ -203,8 +191,7 @@ function checkPosition(){
         case 5:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector5').style.backgroundColor = "white";
-            document.querySelector('#pageSelector5').style.color = "black";
+            document.querySelector('#pageSelector5').classList.add("pageSelected"); 
             t5 = setTimeout(() => { 
                 message6.classList.remove("hidden"); 
                 message6.classList.add("visible");
@@ -217,8 +204,7 @@ function checkPosition(){
         case 6:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector6').style.backgroundColor = "white";
-            document.querySelector('#pageSelector6').style.color = "black";
+            document.querySelector('#pageSelector6').classList.add("pageSelected"); 
             t6 = setTimeout(() => { 
                 message7.classList.remove("hidden"); 
                 message7.classList.add("visible");
@@ -231,8 +217,7 @@ function checkPosition(){
         case 7:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector7').style.backgroundColor = "white";
-            document.querySelector('#pageSelector7').style.color = "black";
+            document.querySelector('#pageSelector7').classList.add("pageSelected"); 
             t7 = setTimeout(() => { 
                 message8.classList.remove("hidden"); 
                 message8.classList.add("visible");
@@ -245,8 +230,7 @@ function checkPosition(){
         case 8:
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector8').style.backgroundColor = "white";
-            document.querySelector('#pageSelector8').style.color = "black";
+            document.querySelector('#pageSelector8').classList.add("pageSelected"); 
             t8 = setTimeout(() => { 
                 message9.classList.remove("hidden"); 
                 message9.classList.add("visible");
@@ -261,7 +245,7 @@ function checkPosition(){
             buttonRightContainer.classList.add("hidden");
             stepCounter.classList.remove("visible");
             stepCounter.classList.add("hidden");
-            document.querySelector('#pageSelector9').style.backgroundColor = "white";
+            document.querySelector('#pageSelector9').classList.add("pageSelected"); 
             t9 = setTimeout(() => { 
                 message10.classList.remove("hidden"); 
                 message10.classList.add("visible");
@@ -369,7 +353,8 @@ leftButton.addEventListener('touchend', (e) => {
 
 for (const selector of selectors) {
     selector.addEventListener('click', (e) => {
-        currentPosition = Number(e.target.innerHTML);
+        currentPosition = Number(selector.querySelector(".pageSelectors").innerHTML);
+        console.log(currentPosition);
         checkPosition();
     })
 }
@@ -378,7 +363,8 @@ for (const selector of selectors) {
     selector.addEventListener('touchend', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        currentPosition = Number(e.target.innerHTML);
+        currentPosition = Number(selector.querySelector(".pageSelectors").innerHTML);
+        console.log(currentPosition);
         checkPosition();
     })
 }
