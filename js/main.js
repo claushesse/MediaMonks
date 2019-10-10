@@ -354,7 +354,6 @@ leftButton.addEventListener('touchend', (e) => {
 for (const selector of selectors) {
     selector.addEventListener('click', (e) => {
         currentPosition = Number(selector.querySelector(".pageSelectors").innerHTML);
-        console.log(currentPosition);
         checkPosition();
     })
 }
@@ -364,7 +363,6 @@ for (const selector of selectors) {
         e.preventDefault();
         e.stopPropagation();
         currentPosition = Number(selector.querySelector(".pageSelectors").innerHTML);
-        console.log(currentPosition);
         checkPosition();
     })
 }

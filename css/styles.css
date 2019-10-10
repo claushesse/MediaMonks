@@ -514,8 +514,9 @@ body{
 #stepCounter{
     position: absolute;
     font-family: KlavikaLight;
-    font-size: 1.7em;
+    font-size: 1.5em;
     display: inline-block;
+    margin-bottom: 1em;
     color: rgb(218, 218, 218);
     width: 60%; 
     left: 6%;
