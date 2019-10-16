@@ -1058,7 +1058,7 @@ body{
     
     .text{
         font-family: KlavikaLight;
-        font-size: calc(100vh * 0.07); 
+        font-size: calc(100vh * 0.05); 
         font-weight: 600;
         color: rgb(233, 233, 233); 
         display: inline-block;
